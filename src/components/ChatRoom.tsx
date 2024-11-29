@@ -40,7 +40,6 @@ export default function ChatRoom({ roomId, username, onLeave }: ChatRoomProps) {
         onLeave();
       }
     };
-
     const interval = setInterval(pollForMessages, 1000);
     return () => clearInterval(interval);
   }, [roomId, messages, onLeave]);
@@ -52,6 +51,7 @@ export default function ChatRoom({ roomId, username, onLeave }: ChatRoomProps) {
     try {
       const message = await sendMessage(roomId, newMessage, username);
       setMessages(prev => [...prev, message]);
+      console.log(polling)
       setNewMessage('');
     } catch (error) {
       console.log(error)

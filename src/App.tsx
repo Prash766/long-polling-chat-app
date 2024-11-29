@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Toaster } from 'react-hot-toast';
+import  { useState } from 'react';
 import JoinForm from './components/JoinForm';
 import ChatRoom from './components/ChatRoom';
 
@@ -16,7 +15,6 @@ function App() {
 
   return (
     <>
-      <Toaster position="top-right" />
       {currentRoom ? (
         <ChatRoom
           roomId={currentRoom.id}
