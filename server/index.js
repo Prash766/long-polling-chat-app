@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const rooms = new Map();
-const ROOM_EXPIRY = 1000 * 60 * 60; // 1 hour
+const ROOM_EXPIRY = 1000 * 60 * 60
 
 function cleanupRoom(roomId) {
   const room = rooms.get(roomId);
