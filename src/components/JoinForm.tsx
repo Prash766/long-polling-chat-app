@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MessageSquarePlus, LogIn } from 'lucide-react';
-import toast from 'react-hot-toast';
+import {toast} from 'sonner'
 import { createRoom, joinRoom } from '../services/api';
 
 interface JoinFormProps {
@@ -24,6 +24,7 @@ export default function JoinForm({ onJoin }: JoinFormProps) {
         onJoin(roomId, username || 'Anonymous');
       }
     } catch (error) {
+      console.log(error)
       toast.error('Failed to join room. Please try again.');
     }
   };
