@@ -17,11 +17,11 @@ export default function JoinForm({ onJoin }: JoinFormProps) {
     
     try {
       if (isCreating) {
-        const response = await createRoom(username || 'Anonymous');
-        onJoin(response.roomId, username || 'Anonymous');
+        const response = await createRoom(username || `Anonymous${Math.ceil(Math.random()*10)}`);
+        onJoin(response.roomId, username || `Anonymous${Math.ceil(Math.random()*10)}`);
       } else {
-        await joinRoom(roomId, username || 'Anonymous');
-        onJoin(roomId, username || 'Anonymous');
+        await joinRoom(roomId, username || `Anonymous${Math.ceil(Math.random()*10)}`);
+        onJoin(roomId, username || `Anonymous${Math.ceil(Math.random()*10)}`);
       }
     } catch (error) {
       console.log(error)

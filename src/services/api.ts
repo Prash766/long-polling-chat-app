@@ -31,7 +31,7 @@ export const pollMessages = async (roomId: string, lastMessageId?: string) => {
   const url = new URL(`${API_BASE_URL}/rooms/${roomId}/messages`);
   if (lastMessageId) {
     url.searchParams.append('lastMessageId', lastMessageId);
-  }
+  } 
   const response = await fetch(url.toString());
   if (!response.ok) {
     throw new Error('Room not found');
